@@ -34,16 +34,16 @@ const SongSchema = new mongoose.Schema(
     },
     album: { 
       type: String,
-      required: [true, 'Song title is required']
+      required: [true, 'Song album is required']
      },
     artist: { 
       type: String,
-      required: [true, 'Song title is required']
+      required: [true, 'Song artist is required']
      },
     gener: { 
       type: String,
       enum:SongGeneres,
-      required: [true, 'Song title is required']
+      required: [true, 'Song gener is required']
      },
   },
   { timestamps: true }
