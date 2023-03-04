@@ -49,4 +49,4 @@ const SongSchema = new mongoose.Schema(
   { timestamps: true }
 );
 const SongModel = mongoose.model("song", SongSchema);
-module.exports = {SongModel,SongGeneres};
+module.exports  = {SongModel,SongGeneres};
