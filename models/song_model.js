@@ -30,14 +30,20 @@ const SongSchema = new mongoose.Schema(
   {
     title: { 
       type: String,
+      trim: true,
+      match: /^[a-zA-Z0-9-_$.]+$/,
       required: [true, 'Song title is required']
     },
     album: { 
       type: String,
-      required: [true, 'Song album is required']
+      trim:true,
+      match: /^[a-zA-Z-_$.]$/,
+      default:"single"
      },
     artist: { 
       type: String,
+      trim: true,
+      match: /^[a-zA-Z-_$.]$/,
       required: [true, 'Song artist is required']
      },
     gener: { 

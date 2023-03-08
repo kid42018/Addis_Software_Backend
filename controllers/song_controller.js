@@ -2,7 +2,7 @@ const {SongModel,SongGeneres} = require("../models/song_model");
 async function getSongs(req,res){
     try {
         const songs = await SongModel.find();
-        res.status(201).json({success:true,data:songs});
+        res.status(200).json({success:true,data:songs});
       } catch (error) {
         res.status(400).json({success:false,message:error.message});
       }
@@ -116,7 +116,7 @@ async function updateSong(req,res){
         const song =   await SongModel.findById(id);
         if(song){
             await SongModel.findByIdAndUpdate(id, req.body, {runValidators: true,});
-           return res.status(201).json({success:true,message:"Song Updated Successfully"});  
+            return res.status(200).json({success:true,message:"Song Updated Successfully"});  
         }
         return  res.status(400).json({success:false,message:"Song not found"});
       } catch (error) {
@@ -129,7 +129,7 @@ async function deleteSong(req,res){
         const song =   await SongModel.findById(id);
         if(song){
             await SongModel.findByIdAndDelete(id);
-           return res.status(201).json({success:true,message:"Song Deleted Successfully"});  
+           return res.status(200).json({success:true,message:"Song Deleted Successfully"});  
         }
         return  res.status(400).json({success:false,message:"Song not found"});
       } catch (error) {
